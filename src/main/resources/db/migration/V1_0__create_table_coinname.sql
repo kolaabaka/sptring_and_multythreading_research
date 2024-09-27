@@ -1,0 +1,4 @@
+CREATE TABLE CoinName (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name VARCHAR(5) NOT NULL
+);

@@ -1,0 +1,1 @@
+INSERT INTO CoinName VALUES (1,'BTC'),(2,'ETH'),(3,'DOGGY'),(4,'PEPE');

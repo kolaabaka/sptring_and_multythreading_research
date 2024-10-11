@@ -1,0 +1,1 @@
+--INSERT INTO CoinCourse VALUES (1,1,NULL),(2,2,NULL),(3,3,NULL),(4,4,NULL);

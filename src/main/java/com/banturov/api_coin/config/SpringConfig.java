@@ -1,15 +1,12 @@
 package com.banturov.api_coin.config;
 
+import com.banturov.api_coin.dto.CourseDto;
 import com.banturov.api_coin.repository.IDbRep;
-import com.banturov.api_coin.starter.Starter;
-import com.banturov.api_coin.thread.BtcDataGet;
-import com.banturov.api_coin.thread.EthDataGet;
-import com.banturov.api_coin.thread.PepeDataGet;
+import com.banturov.api_coin.starter.StarterBtc;
+import com.banturov.api_coin.thread.CoinDataGet;
 import com.banturov.api_coin.webClient.service.CoinCourseService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.logging.Logger;
@@ -18,23 +15,13 @@ import java.util.logging.Logger;
 public class SpringConfig {
 
     @Bean
-    public static Starter getStarter(){
-        return new Starter(SpringConfig.getBtcDataGet());
+    public static StarterBtc getBtcStarter(){
+        return new StarterBtc(SpringConfig.getBtcDataGet());
     }
 
     @Bean
-    public static BtcDataGet getBtcDataGet(){
-        return new BtcDataGet(new CoinCourseService(webClientFactory(), getLog()));
-    }
-
-    @Bean
-    public static EthDataGet getEthDataGet(){
-        return new EthDataGet(new CoinCourseService(webClientFactory(), getLog()));
-    }
-
-    @Bean
-    public static PepeDataGet getPepeDataGet(){
-        return new PepeDataGet(new CoinCourseService(webClientFactory(), getLog()));
+    public static CoinDataGet getBtcDataGet(){
+        return new CoinDataGet(new CoinCourseService(webClientFactory(), getLog()),"BTCUSDT",1, DbConfig.getDsl());
     }
 
     @Bean

@@ -1,15 +1,15 @@
 package com.banturov.api_coin.starter;
 
-import com.banturov.api_coin.thread.BtcDataGet;
+import com.banturov.api_coin.thread.CoinDataGet;
 import lombok.RequiredArgsConstructor;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @RequiredArgsConstructor
-public class Starter {
+public class StarterBtc {
 
-    private final BtcDataGet btcDataGet;
+    private final CoinDataGet btcDataGet;
 
     public void GO(){
         ExecutorService executorBtcService = Executors.newSingleThreadExecutor();

@@ -1,7 +1,6 @@
 package com.banturov.api_coin.rest;
 
 import com.banturov.api_coin.dto.CourseDto;
-import com.banturov.api_coin.thread.BtcDataGet;
 import com.banturov.api_coin.webClient.service.CoinCourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +12,6 @@ import reactor.core.publisher.Mono;
 public class CourseCoin {
 
     private final CoinCourseService coinService;
-
-    private final BtcDataGet dataGet;
 
     @GetMapping(value = "/btc")
     public CourseDto getCourseBtc(){

@@ -1,6 +1,6 @@
 CREATE TABLE CoinCourse (
-    id INTEGER NOT NULL PRIMARY KEY,
+    id serial primary key,
     coinId INTEGER NOT NULL,
-    course INTEGER,
+    course VARCHAR(30),
     FOREIGN KEY (coinId) REFERENCES Coinname(id)
 );
